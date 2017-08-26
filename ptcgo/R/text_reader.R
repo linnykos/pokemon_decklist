@@ -17,9 +17,18 @@ file_reader <- function(deck_file){
 line_parser <- function(line){
   str <- unlist(strsplit(line, " "))
   len <- length(str)
-  num <- str[2]; set <- str[len-1]
-  name <- paste0(str[3:(len-2)], collapse = " ")
-  id <- paste0(str[3:len], collapse = "")
+  num <- str[2]
+
+  if(nchar(str[len-1]) == 3){
+    set <- str[len-1]
+    name <- paste0(str[3:(len-2)], collapse = " ")
+    id <- paste0(str[3:len], collapse = "")
+  } else {
+    set <- NA
+    name <- paste0(str[3:(len-1)], collapse = " ")
+    id <- paste0(str[3:(len-1)], collapse = "")
+  }
+
 
   list(num = num, name = name, id = id, set = set)
 }
