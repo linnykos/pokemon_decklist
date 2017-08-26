@@ -16,9 +16,11 @@ decklist <- function(deck_file, filename){
   graphics::plot(NA, xlim = c(0, tw), ylim = c(0, nh), asp = T,
                  xaxt = "n", yaxt = "n", ann = F, bty = "n")
 
-  pkmn_gray <- rgb(62, 70, 83, max = 255)
-  pkmn_gradient <- grDevices::colorRampPalette(c(rgb(62, 70, 83, 255, max = 255),
-                                                 rgb(62, 70, 83, 0, max = 255)),
+  col_vec <- c(223, 237, 250)
+  pkmn_col <- rgb(col_vec[1], col_vec[2], col_vec[3], max = 255)
+  pkmn_colgradient <- grDevices::colorRampPalette(c(pkmn_col,
+                                                 rgb(col_vec[1], col_vec[2],
+                                                     col_vec[3], 0, max = 255)),
                                                alpha = T)(100)
 
   #enter all the pkmn cards
@@ -33,9 +35,9 @@ decklist <- function(deck_file, filename){
     graphics::rasterImage(img_cropped, 155, (n-i)*th+35, 155+w, (n-i)*th+35+h)
 
     #add gradient
-    graphics::rect(153, (n-i)*th+35-2, 153+.35*w, (n-i)*th+35+h+2, col = pkmn_gray,
+    graphics::rect(153, (n-i)*th+35-2, 153+.35*w, (n-i)*th+35+h+2, col = pkmn_col,
                    border = NA)
-    gradient_rectangle(153+.35*w, (n-i)*th+35-2, 153+.5*w, (n-i)*th+35+h+2, pkmn_gradient)
+    gradient_rectangle(153+.35*w, (n-i)*th+35-2, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
 
     #add name
     TeachingDemos::shadowtext(155, (n-i)*th+35+h/2, txt_mat[i,2],
