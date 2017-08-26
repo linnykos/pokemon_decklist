@@ -1,4 +1,3 @@
-#extract the row
 image_row_extraction <- function(file, extraction_method = .extract_base){
   mat <- png::readPNG(file)
   extraction_method(mat)
