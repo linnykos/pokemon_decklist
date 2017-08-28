@@ -44,15 +44,13 @@ decklist <- function(deck_file, filename){
     gradient_rectangle(153+.35*w, (n-i)*th+35-2, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
 
     #add name
-    #TeachingDemos::shadowtext(155, (n-i)*th+35+h/2, txt_mat[i,2],
-    #                          pos = 4, cex = 2, r = 0.3)
-    text(155, (n-i)*th+35+h/2, txt_mat[i,2], pos = 4, cex = 2, family = "bevan")
+    shadowtext(155, (n-i)*th+35+h/2, txt_mat[i,2],
+               pos = 4, cex = 1.75, r = 0.3, family = "bevan")
 
     #add num
     if(txt_mat[i,1] != 1){
-      #TeachingDemos::shadowtext(880, (n-i)*th+20+h/2, txt_mat[i,1], col = "gold",
-      #                          pos = 2, cex = 3, r = 0.3)
-      text(880, (n-i)*th+20+h/2, txt_mat[i,1], col = "gold", pos = 2, cex = 3, family = "bevan")
+      shadowtext(880, (n-i)*th+20+h/2, txt_mat[i,1], col = "gold",
+                                pos = 2, cex = 3, r = 0.3, family = "bevan")
     }
   }
   showtext::showtext.end()
