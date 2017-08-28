@@ -11,7 +11,8 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     png,
-    showtext
+    showtext,
+    sysfonts
 Suggests:
     testthat
 RoxygenNote: 6.0.1

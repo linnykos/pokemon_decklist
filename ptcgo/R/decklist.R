@@ -23,7 +23,7 @@ decklist <- function(deck_file, filename){
                                                alpha = T)(100)
 
   #set up fonts
-  sysfonts::font.add.google("Bevan", "bevan")
+  font_id <- font_setup()
   showtext::showtext.begin()
 
   #enter all the pkmn cards
@@ -35,23 +35,23 @@ decklist <- function(deck_file, filename){
     func <- .file_parser()
     img <- image_row_extraction(func(txt_mat[i,3]))
     img_cropped <- .extract_base(img)
-    graphics::rasterImage(img_cropped, 155, (n-i)*th+35, 155+w, (n-i)*th+35+h)
+    graphics::rasterImage(img_cropped, 155, (n-i)*th+35-8, 155+w, (n-i)*th+35+h)
 
     #add gradient
-    graphics::rect(153, (n-i)*th+35-2, 153+.35*w, (n-i)*th+35+h+2, col = pkmn_col,
+    graphics::rect(153, (n-i)*th+35-10, 153+.35*w, (n-i)*th+35+h+2, col = pkmn_col,
                    border = NA)
-    gradient_rectangle(153+.35*w, (n-i)*th+35-2, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
+    gradient_rectangle(153+.35*w, (n-i)*th+35-10, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
 
     #add name
     cex <- .string_shortner(txt_mat[i,2], base = 170)*1.75
     shadowtext(155, (n-i)*th+30+h/2, txt_mat[i,2],
-               pos = 4, cex = cex, r = 0.5, family = "bevan")
+               pos = 4, cex = cex, r = 0.5, family = font_id)
 
     #add num
     if(txt_mat[i,1] != 1){
       cex <- .string_shortner(txt_mat[i,1], base = 16.29, min = 0.6)*3
       shadowtext(885, (n-i)*th+25+h/2, txt_mat[i,1], col = "gold",
-                                pos = 2, cex = cex, r = 0.5, family = "bevan")
+                                pos = 2, cex = cex, r = 0.5, family = font_id)
     }
   }
   showtext::showtext.end()
