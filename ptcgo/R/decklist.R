@@ -49,7 +49,7 @@ decklist <- function(deck_file, filename){
 
     #add edge
     if(txt_mat[i,1] != 1){
-      graphics::rasterImage(tile_edge, 771, (n-i)*th+24-1, 771+tew+3, (n-i)*th+24+teh-1)
+      graphics::rasterImage(tile_edge, 771, (n-i)*th+24+.5, 771+tew+3, (n-i)*th+24+teh-1)
     } else {
 
     }
