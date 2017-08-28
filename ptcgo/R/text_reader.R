@@ -33,10 +33,8 @@ line_parser <- function(line){
   list(num = num, name = name, id = id, set = set)
 }
 
-.string_shortner <- function(str, lim = 15){
-  len <- nchar(str)
-  if(len > lim){
-    str <- paste0(substring(str, 1, 15), "...")
-  }
-  str
+#determines the appropriate cex for string
+.string_shortner <- function(str, base = 170, min_ratio = 0.75){
+  len <- graphics::strwidth(str)
+  ifelse(len <= base, 1, max(base/len, min_ratio))
 }

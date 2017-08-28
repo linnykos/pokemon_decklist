@@ -1,3 +1,5 @@
+#download font
+
 deck_file = "../greninja.txt"
 filename = "../test.png"
 

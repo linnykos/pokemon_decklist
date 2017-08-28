@@ -4,7 +4,6 @@ decklist <- function(deck_file, filename){
 
   txt_mat <- t(sapply(txt, line_parser)); n <- nrow(txt_mat)
   txt_mat[,1] <- as.numeric(txt_mat[,1])
-  txt_mat[,2] <- sapply(txt_mat[,2], .string_shortner)
 
   tile <- ptcgo::tile; th <- dim(tile)[1]; tw <- dim(tile)[2]
   nh <- th*nrow(txt_mat)
@@ -16,7 +15,7 @@ decklist <- function(deck_file, filename){
   graphics::plot(NA, xlim = c(0, tw), ylim = c(0, nh), asp = T,
                  xaxt = "n", yaxt = "n", ann = F, bty = "n")
 
-  col_vec <- c(223, 237, 250)
+  col_vec <- c(17, 114, 49)
   pkmn_col <- rgb(col_vec[1], col_vec[2], col_vec[3], max = 255)
   pkmn_colgradient <- grDevices::colorRampPalette(c(pkmn_col,
                                                  rgb(col_vec[1], col_vec[2],
@@ -44,13 +43,15 @@ decklist <- function(deck_file, filename){
     gradient_rectangle(153+.35*w, (n-i)*th+35-2, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
 
     #add name
-    shadowtext(155, (n-i)*th+35+h/2, txt_mat[i,2],
-               pos = 4, cex = 1.75, r = 0.3, family = "bevan")
+    cex <- .string_shortner(txt_mat[i,2], base = 170)*1.75
+    shadowtext(155, (n-i)*th+30+h/2, txt_mat[i,2],
+               pos = 4, cex = cex, r = 0.5, family = "bevan")
 
     #add num
     if(txt_mat[i,1] != 1){
-      shadowtext(880, (n-i)*th+20+h/2, txt_mat[i,1], col = "gold",
-                                pos = 2, cex = 3, r = 0.3, family = "bevan")
+      cex <- .string_shortner(txt_mat[i,1], base = 16.29)*3
+      shadowtext(885, (n-i)*th+25+h/2, txt_mat[i,1], col = "gold",
+                                pos = 2, cex = cex, r = 0.5, family = "bevan")
     }
   }
   showtext::showtext.end()
