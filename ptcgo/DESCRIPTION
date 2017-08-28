@@ -11,7 +11,8 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     png,
-    TeachingDemos
+    TeachingDemos,
+    showtext
 Suggests:
     testthat
 RoxygenNote: 6.0.1
