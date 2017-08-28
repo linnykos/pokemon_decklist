@@ -32,11 +32,15 @@ decklist <- function(deck_file, filename){
     #add tile
     graphics::rasterImage(tile, 0, (n-i)*th, tw, (n-i+1)*th)
 
-    #add pkmn image
+    #add pkmn image; check the number of copies
     func <- .file_parser()
     img <- image_row_extraction(func(txt_mat[i,3]))
     img_cropped <- .extract_base(img)
-    graphics::rasterImage(img_cropped, 170, (n-i)*th+35-6, 170+w, (n-i)*th+35+h)
+    if(txt_mat[i,1] != 1){
+      graphics::rasterImage(img_cropped, 170, (n-i)*th+35-6, 170+w, (n-i)*th+35+h)
+    } else {
+      graphics::rasterImage(img_cropped, 170+85, (n-i)*th+35-6, 170+w+85, (n-i)*th+35+h)
+    }
 
     #add gradient
     graphics::rect(153, (n-i)*th+35-10, 153+.35*w, (n-i)*th+35+h+2, col = pkmn_col,
@@ -44,7 +48,11 @@ decklist <- function(deck_file, filename){
     gradient_rectangle(153+.35*w, (n-i)*th+35-10, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
 
     #add edge
-    graphics::rasterImage(tile_edge, 771, (n-i)*th+24-1, 771+tew+3, (n-i)*th+24+teh-1)
+    if(txt_mat[i,1] != 1){
+      graphics::rasterImage(tile_edge, 771, (n-i)*th+24-1, 771+tew+3, (n-i)*th+24+teh-1)
+    } else {
+
+    }
 
     #add name
     cex <- .string_shortner(txt_mat[i,2], base = 170)*1.75
