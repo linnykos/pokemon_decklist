@@ -8,6 +8,7 @@ decklist <- function(deck_file, filename){
   tile <- ptcgo::tile; th <- dim(tile)[1]; tw <- dim(tile)[2]
   nh <- th*nrow(txt_mat)
   res <- .calculate_image_size(txt_mat); h <- res$h; w <- res$w
+  tile_edge <- ptcgo::tile_edge; teh <- dim(tile_edge)[1]; tew <- dim(tile_edge)[2]
 
   #set up plotting
   grDevices::png(filename, 400, nh*400/tw, units = "px")
@@ -35,12 +36,15 @@ decklist <- function(deck_file, filename){
     func <- .file_parser()
     img <- image_row_extraction(func(txt_mat[i,3]))
     img_cropped <- .extract_base(img)
-    graphics::rasterImage(img_cropped, 155, (n-i)*th+35-8, 155+w, (n-i)*th+35+h)
+    graphics::rasterImage(img_cropped, 170, (n-i)*th+35-6, 170+w, (n-i)*th+35+h)
 
     #add gradient
     graphics::rect(153, (n-i)*th+35-10, 153+.35*w, (n-i)*th+35+h+2, col = pkmn_col,
                    border = NA)
     gradient_rectangle(153+.35*w, (n-i)*th+35-10, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
+
+    #add edge
+    graphics::rasterImage(tile_edge, 771, (n-i)*th+24-1, 771+tew+3, (n-i)*th+24+teh-1)
 
     #add name
     cex <- .string_shortner(txt_mat[i,2], base = 170)*1.75
@@ -49,7 +53,7 @@ decklist <- function(deck_file, filename){
 
     #add num
     if(txt_mat[i,1] != 1){
-      cex <- .string_shortner(txt_mat[i,1], base = 16.29, min = 0.6)*3
+      cex <- .string_shortner(txt_mat[i,1], base = 16.29, min = 0.55)*3
       shadowtext(885, (n-i)*th+25+h/2, txt_mat[i,1], col = "gold",
                                 pos = 2, cex = cex, r = 0.5, family = font_id)
     }
