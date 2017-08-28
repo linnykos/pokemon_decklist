@@ -49,7 +49,7 @@ decklist <- function(deck_file, filename){
 
     #add num
     if(txt_mat[i,1] != 1){
-      cex <- .string_shortner(txt_mat[i,1], base = 16.29)*3
+      cex <- .string_shortner(txt_mat[i,1], base = 16.29, min = 0.6)*3
       shadowtext(885, (n-i)*th+25+h/2, txt_mat[i,1], col = "gold",
                                 pos = 2, cex = cex, r = 0.5, family = "bevan")
     }
