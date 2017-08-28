@@ -8,7 +8,9 @@ decklist <- function(deck_file, filename){
   tile <- ptcgo::tile; th <- dim(tile)[1]; tw <- dim(tile)[2]
   nh <- th*nrow(txt_mat)
   res <- .calculate_image_size(txt_mat); h <- res$h; w <- res$w
+
   tile_edge <- ptcgo::tile_edge; teh <- dim(tile_edge)[1]; tew <- dim(tile_edge)[2]
+  tile_edge2 <- ptcgo::tile_edge2; teh2 <- dim(tile_edge2)[1]; tew2 <- dim(tile_edge2)[2]
 
   #set up plotting
   grDevices::png(filename, 400, nh*400/tw, units = "px")
@@ -51,7 +53,7 @@ decklist <- function(deck_file, filename){
     if(txt_mat[i,1] != 1){
       graphics::rasterImage(tile_edge, 771, (n-i)*th+24+.5, 771+tew+3, (n-i)*th+24+teh-1)
     } else {
-
+      graphics::rasterImage(tile_edge2, 849, (n-i)*th+24, 849+tew2, (n-i)*th+24+teh2)
     }
 
     #add name
