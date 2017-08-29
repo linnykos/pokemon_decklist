@@ -29,3 +29,4 @@ TODO
 - .ordering_trainer and .ordering_energy might crash if there are no items, for example,
   or if there are no basic energies
 - Need to teset .ordering_energy w/ a deck with more than one type of energy
+- Generations has a Radiant Collection (RC). How is this represented in the export?

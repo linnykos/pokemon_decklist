@@ -15,9 +15,9 @@
 * 2 Brooklet Hill GRI 120
 * 1 Rescue Stretcher GRI 130
 * 2 Rare Candy SUM 129
-* 3 Evosoda XY 116
+* 4 Evosoda GEN 62
 * 4 Professor Sycamore BKP 107
-* 2 Professor's Letter XY 123
+* 2 Professor's Letter BKT 146
 * 1 Fisherman BKT 136
 * 2 Field Blower GRI 125
 * 2 Guzma BUS 115
@@ -25,7 +25,6 @@
 * 2 Choice Band GRI 121
 * 3 Ultra Ball FAC 113
 * 2 Max Potion GRI 128
-* 1 Wally ROS 94
 
 ##Energy - 10
 
