@@ -1,7 +1,7 @@
 Card_ID, Type, X_right, Y_center
 WaterEnergy,Energy,495,185
-EvosodaXY116,Item,NA,NA
-ProfessorsLetterXY123,Item,NA,NA
+EvosodaXY116,Item,387,159
+ProfessorsLetterXY123,Item,335,187
 TeammatesPRC141,Supporter,413,107
 WallyROS94,Supporter,403,161
 FroakieBKP38,Water,491,110
@@ -14,8 +14,8 @@ RemoraidBKT32,Water,453,119
 OctilleryBKT33,Water,545,119
 ZoroarkBREAKBKT92,Dark,NA,NA
 FishermanBKT136,Supporter,461,113
-TalonflameBREAKSTS21,Fire,NA,NA
-TalonflameSTS96,Normal,NA,NA
+TalonflameBREAKSTS21,Fire,621,287
+TalonflameSTS96,Normal,441,147
 NFAC105,Supporter,251,127
 UltraBallFAC113,Item,435,181
 RareCandySUM129,Item,465,189
