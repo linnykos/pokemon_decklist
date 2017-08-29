@@ -94,7 +94,7 @@ decklist <- function(deck_file, filename){
   list(col = col, col_grad = col_grad)
 }
 
-.file_parser <- function(prefix = "../cards/", suffix = ".png"){
+.file_parser <- function(prefix = "../images/cards/", suffix = ".png"){
   function(id){
     paste0(prefix, id, suffix)
   }
