@@ -1,6 +1,6 @@
 #download font
 
-deck_file = "../greninja.txt"
-filename = "../test.png"
+deck_file = "../main/greninja.txt"
+filename = "../main/test.png"
 
 decklist(deck_file, filename)

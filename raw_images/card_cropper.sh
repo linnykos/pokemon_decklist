@@ -7,7 +7,7 @@ files=`ls`
 
 for card in $files
 do
-  convert $card -crop 633x387+962+356 "../cards/$card"
+  convert $card -crop 633x387+962+356 "../../cards/$card"
 done
 
 ##############
@@ -17,7 +17,7 @@ files=`ls`
 
 for card in $files
 do
-  convert $card -crop 633x387+966+408 "../cards/$card"
+  convert $card -crop 633x387+966+408 "../../cards/$card"
 done
 
 ##############
@@ -27,7 +27,7 @@ files=`ls`
 
 for card in $files
 do
-  convert $card -crop 633x387+962+584 "../cards/$card"
+  convert $card -crop 633x387+962+584 "../../cards/$card"
 done
 
 
@@ -38,8 +38,8 @@ files=`ls`
 
 for card in $files
 do
-  convert $card -crop 685x419+941+443 "../cards/$card"
-  convert "../cards/$card" -resize 633x387 "../cards/$card"
+  convert $card -crop 685x419+941+443 "../../cards/$card"
+  convert "../../cards/$card" -resize 633x387 "../../cards/$card"
 done
 
 ##############
@@ -49,6 +49,6 @@ files=`ls`
 
 for card in $files
 do
-  convert $card -background white -virtual-pixel background +distort ScaleRotateTranslate +90 +repage "../cards/$card"
-  convert "../cards/$card" -crop 633x387+533+1070 "../cards/$card"
+  convert $card -background white -virtual-pixel background +distort ScaleRotateTranslate +90 +repage "../../cards/$card"
+  convert "../../cards/$card" -crop 633x387+533+1070 "../../cards/$card"
 done
