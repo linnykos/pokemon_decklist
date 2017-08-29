@@ -32,3 +32,4 @@ TODO
 - Generations has a Radiant Collection (RC). How is this represented in the export?
 - Make pokeball (normal) look more white
 - Check to see if deck has 60 cards
+- maybe add yellow horizontal bars to separate pokemon, trainer and energy

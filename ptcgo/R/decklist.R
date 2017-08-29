@@ -93,12 +93,12 @@ decklist <- function(deck_file, filename){
 .plot_icon_set <- function(vec, ni, th){
   basic_energy <- ptcgo::basic_energy
   icon <- .grab_icon(vec$Type, ifelse(length(.idx_basic(vec$name)) == 1, TRUE, FALSE))
-  graphics::rasterImage(icon, 0, ni*th, th, (ni+1)*th)
+  graphics::rasterImage(icon, 5, ni*th, 5+th, (ni+1)*th)
 
   if(!is.na(vec$set) & !(vec$Type %in% c("Item", "Supporter", "Stadium", "Energy"))){
     set <- .grab_set(vec$set)
     sh <- dim(set)[1]; sw <- dim(set)[2]
-    graphics::rasterImage(set, 32, ni*th+30, 32+sw, ni*th+30+sh)
+    graphics::rasterImage(set, 37, ni*th+30, 37+sw, ni*th+30+sh)
   }
 
   invisible()
