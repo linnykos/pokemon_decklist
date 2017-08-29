@@ -1,10 +1,10 @@
 context("Test text_reader")
 
-## line_parser is correct
+## .line_parser is correct
 
-test_that("line_parser works", {
+test_that(".line_parser works", {
   str <- "* 4 Froakie BKP 38"
-  res <- line_parser(str)
+  res <- .line_parser(str)
 
   expect_true(length(res) == 4)
   expect_true(all(sort(names(res)) == sort(c("num", "name", "id", "set"))))
@@ -14,9 +14,9 @@ test_that("line_parser works", {
   expect_true(res$set == "BKP")
 })
 
-test_that("line_parser handles special characters and non-3 letter set", {
+test_that(".line_parser handles special characters and non-3 letter set", {
   str <- "* 2 Professor's Letter XY 123"
-  res <- line_parser(str)
+  res <- .line_parser(str)
 
   expect_true(res$name == "Professor's Letter")
   expect_true(res$set == "XY")

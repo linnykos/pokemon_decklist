@@ -22,3 +22,8 @@ TODO
 - The font installation bugs out on the first try when there's no internet?
 - Certain cards need custom cropping (or at least different ones?) (i.e., Talonflame
   BREAK, and all the EVO ones such as Raticate EVO)
+- Add data.R documentation
+- Find a way to reliably test all my plotting functions
+- Add documentation and update the readme to be informative, as well as the DESCRIPTION
+  file
+- .ordering_trainer and .ordering_energy might crash if there are no items, for example
