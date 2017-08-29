@@ -7,11 +7,10 @@ TODO
 - Add the pokemon database. It will have pokemon name, evolution family, and previous
   evolution.
 - Sort the pokemon in a meaningful order (i.e., basic first, and length of name ->
-  alphabetical to break ties)
+  alphabetical to break ties), as well as the trainers and energy
 - Make the system allow user to point-and-click to fill in the desired locations of
   cards who don't have X_right and Y_center filled in already. This would update
   the csv
-- Add system for the set images
 - We need a error-handling system for if 1) the set name doesn't exist, 2) the pokemon
   ID is not found when using decklist, 3) X_right and Y_center is out of bounds, 4)
   pokemon ID is not found when making the card database (or information is incorretly
@@ -21,3 +20,5 @@ TODO
 - We need more tools to help populate card_db.csv. For example, it looks through all
   the raw images and populates the names (with blanks) in the appropriate places??
 - The font installation bugs out on the first try when there's no internet?
+- Certain cards need custom cropping (or at least different ones?) (i.e., Talonflame
+  BREAK, and all the EVO ones such as Raticate EVO)
