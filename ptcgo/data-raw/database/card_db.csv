@@ -1,30 +1,30 @@
 Card_ID, Type, X_right, Y_center
-WaterEnergy,Energy,NA,NA
-TeammatesPRC141,Supporter,NA,NA
-WallyROS94,Supporter,NA,NA
+WaterEnergy,Energy,495,185
+TeammatesPRC141,Supporter,413,107
+WallyROS94,Supporter,403,161
 FroakieBKP38,Water,491,110
-FrogadierBKP39,Water,NA,NA
-GreninjaBKP40,Water,NA,NA
-GreninjaBREAKBKP41,Water,NA,NA
-ProfessorSycamoreBKP107,Supporter,NA,NA
-SplashEnergyBKP113,Energy,NA,NA
-RemoraidBKT32,Water,NA,NA
-OctilleryBKT33,Water,NA,NA
-FishermanBKT136,Supporter,NA,NA
-NFAC105,Supporter,NA,NA
-UltraBallFAC113,Item,NA,NA
-RareCandySUM129,Item,NA,NA
+FrogadierBKP39,Water,355,81
+GreninjaBKP40,Water,459,171
+GreninjaBREAKBKP41,Water,409,181
+ProfessorSycamoreBKP107,Supporter,405,95
+SplashEnergyBKP113,Energy,529,181
+RemoraidBKT32,Water,453,119
+OctilleryBKT33,Water,545,119
+FishermanBKT136,Supporter,461,113
+NFAC105,Supporter,251,127
+UltraBallFAC113,Item,435,181
+RareCandySUM129,Item,465,189
 AlolanVulpixGRI21,Water,323,201
-BrookletHillGRI120,Stadium,NA,NA
-ChoiceBandGRI121,Item,NA,NA
-FieldBlowerGRI125,Item,NA,NA
-MaxPotionGRI128,Item,NA,NA
-RescueStretcherGRI130,Item,NA,NA
-HorseaBUS29,Water,NA,NA
-SeadraBUS30,Water,NA,NA
-KingdraBUS31,Water,NA,NA
-AcerolaBUS112,Supporter,NA,NA
-GuzmaBUS115,Supporter,NA,NA
+BrookletHillGRI120,Stadium,265,137
+ChoiceBandGRI121,Item,289,241
+FieldBlowerGRI125,Item,597,177
+MaxPotionGRI128,Item,349,109
+RescueStretcherGRI130,Item,467,141
+HorseaBUS29,Water,421,177
+SeadraBUS30,Water,291,101
+KingdraBUS31,Water,321,89
+AcerolaBUS112,Supporter,367,133
+GuzmaBUS115,Supporter,367,97
 
 
 

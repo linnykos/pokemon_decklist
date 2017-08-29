@@ -40,9 +40,9 @@ decklist <- function(deck_file, filename){
 }
 
 
-.plot_pokemon <- function(vec, ni, th){
+.plot_pokemon <- function(vec, ni, th, offset = 50){
   func <- .file_parser()
-  img <- .image_row_extraction(func(vec$id), vec$X_right+15, vec$Y_center)
+  img <- .image_row_extraction(func(vec$id), vec$X_right+offset, vec$Y_center)
   img_cropped <- .extract_base(img)
   h <- dim(img_cropped)[1]; w <- dim(img_cropped)[2]
 

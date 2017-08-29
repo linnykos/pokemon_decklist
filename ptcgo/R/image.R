@@ -4,13 +4,13 @@
 }
 
 .extract_base <- function(mat, x = NA, y = NA, hc = 85){
+  h <- dim(mat)[1]; w <- dim(mat)[2]
   if(is.na(x) | is.na(y)){
-    h <- dim(mat)[1]; w <- dim(mat)[2]
     cen <- h/2; top <- cen-hc/2; bot <- cen+hc/2
     mat[top:bot,1:w,]
   } else {
     top <- y-hc/2; bot <- y+hc/2
-    mat[top:bot, 1:x,]
+    mat[top:bot, 1:min(x,w),]
   }
 }
 
