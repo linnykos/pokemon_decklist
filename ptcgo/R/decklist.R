@@ -34,6 +34,9 @@ decklist <- function(deck_file, filename){
 
     #add name and num
     .plot_name_number(txt_mat[i,], n-i, th, font_id)
+
+    #plot icon and set
+    .plot_icon_set(txt_mat[i,], n-i, th)
   }
   showtext::showtext.end()
 
@@ -85,6 +88,12 @@ decklist <- function(deck_file, filename){
   }
 
   invisible()
+}
+
+.plot_icon_set <- function(vec, ni, th){
+  basic_energy <- ptcgo::basic_energy
+  icon <- .grab_icon(vec$Type, ifelse(length(.idx_basic(vec$name)) == 1, TRUE, FALSE))
+  graphics::rasterImage(icon, 0, ni*th, th, (ni+1)*th)
 }
 
 .color_setup <- function(r, g, b, len = 100){

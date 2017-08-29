@@ -25,15 +25,19 @@
 
 .ordering_energy <- function(txt_mat){
   n <- nrow(txt_mat)
-  basic_energy <- ptcgo::basic_energy
 
-  idx1 <- unlist(sapply(basic_energy, function(x){grep(x, txt_mat$name)}))
+  idx1 <- .idx_basic(txt_mat$name)
   idx2 <- c(1:n)[-idx1]
 
   if(length(idx1) > 0) txt_mat[idx1,] <- .order_number_name(txt_mat[idx1,])
   if(length(idx2) > 0) txt_mat[idx2,] <- .order_number_name(txt_mat[idx2,])
 
   txt_mat[c(sort(idx2), sort(idx1)),]
+}
+
+.idx_basic <- function(str){
+  basic_energy <- ptcgo::basic_energy
+  unlist(sapply(basic_energy, function(x){grep(x, str)}))
 }
 
 .order_number_name <- function(txt_mat){
