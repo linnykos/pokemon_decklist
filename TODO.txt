@@ -1,11 +1,8 @@
 TODO
 
-- Not all set names are 3 letters (i.e. XY)
 - Fix card_cropper.sh so it skips the crop if there exists the image in cards/
 - Add different icons (i.e., different pokeballs) for different types
-- Add the desired card name into the csv card database. This is to handle degenerate
-  cases w/ apostrophes. The default is to continue as we've always had.
-  We'll still need a function to "clean" the pokemon 
+- We'll still need a function to "clean" the pokemon 
   name for the pokemon database (i.e., remove GX and EX)
 - Add the pokemon database. It will have pokemon name, evolution family, and previous
   evolution.
