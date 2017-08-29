@@ -22,3 +22,10 @@ test_that(".line_parser handles special characters and non-3 letter set", {
   expect_true(res$set == "XY")
   expect_true(res$id == "ProfessorsLetterXY123")
 })
+
+test_that(".line_parser can handle unlabeled energys", {
+  str <- "* 10 Water Energy  3"
+  res <- .line_parser(str)
+
+  expect_true(res$name == "Water Energy")
+})

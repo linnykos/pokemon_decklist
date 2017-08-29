@@ -4,6 +4,7 @@ decklist <- function(deck_file, filename){
 
   txt_mat <- t(sapply(txt, .line_parser)); n <- nrow(txt_mat)
   txt_mat <- .format_information(txt_mat)
+  txt_mat <- .ordering(txt_mat)
 
   tile <- ptcgo::tile; th <- dim(tile)[1]; tw <- dim(tile)[2]
   nh <- th*nrow(txt_mat)

@@ -31,6 +31,7 @@
   }
 
   id <- gsub("[[:punct:]]","",id)
+  name <- gsub(" $", "", name)
 
   list(num = as.numeric(num), name = name, id = id, set = set)
 }

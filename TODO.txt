@@ -26,4 +26,6 @@ TODO
 - Find a way to reliably test all my plotting functions
 - Add documentation and update the readme to be informative, as well as the DESCRIPTION
   file
-- .ordering_trainer and .ordering_energy might crash if there are no items, for example
+- .ordering_trainer and .ordering_energy might crash if there are no items, for example,
+  or if there are no basic energies
+- Need to teset .ordering_energy w/ a deck with more than one type of energy

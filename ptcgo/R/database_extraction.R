@@ -1,6 +1,4 @@
 .format_information <- function(txt_mat, db_path = "data-raw/db.sqlite"){
-  txt_mat[,1] <- as.numeric(txt_mat[,1])
-
   db <- DBI::dbConnect(RSQLite::SQLite(), dbname = db_path)
 
   addition_mat <- sapply(1:nrow(txt_mat), function(x){
@@ -11,7 +9,14 @@
 
   DBI::dbDisconnect(db)
 
-  .list_to_dataframe(cbind(txt_mat, t(addition_mat)))
+  txt_mat <- .list_to_dataframe(cbind(txt_mat, t(addition_mat)))
+
+  vec <- c("num", "X_right", "Y_center")
+  for(i in vec){
+    txt_mat[,i] <- as.numeric(txt_mat[,i])
+  }
+
+  txt_mat
 }
 
 .list_to_dataframe <- function(txt_mat){
