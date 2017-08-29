@@ -1,5 +1,5 @@
 #code taken from TeachingDemos::shadowtext
-shadowtext <- function(x, y=NULL, labels, col='white', bg='black',
+.shadowtext <- function(x, y=NULL, labels, col='white', bg='black',
          theta= seq(pi/4, 2*pi, length.out=8), r=0.1, ... ) {
 
   xy <- grDevices::xy.coords(x,y)

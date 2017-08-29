@@ -1,8 +1,8 @@
 decklist <- function(deck_file, filename){
-  txt <- file_reader(deck_file)
+  txt <- .file_reader(deck_file)
   txt <- txt[grep("^\\* ", txt)]
 
-  txt_mat <- t(sapply(txt, line_parser)); n <- nrow(txt_mat)
+  txt_mat <- t(sapply(txt, .line_parser)); n <- nrow(txt_mat)
   txt_mat <- .format_information(txt_mat)
 
   tile <- ptcgo::tile; th <- dim(tile)[1]; tw <- dim(tile)[2]
@@ -17,7 +17,7 @@ decklist <- function(deck_file, filename){
   res <- .color_setup(17, 114, 49); col <- res$col; col_grad <- res$col_grad
 
   #set up fonts
-  font_id <- font_setup()
+  font_id <- .font_setup()
   showtext::showtext.begin()
 
   #enter all the pkmn cards
@@ -58,7 +58,7 @@ decklist <- function(deck_file, filename){
 .plot_details <- function(vec, col, col_grad, ni, th, w = 633, h = 85){
   graphics::rect(153, ni*th+35-10, 153+.35*w, ni*th+35+h+2, col = col,
                  border = NA)
-  gradient_rectangle(153+.35*w, ni*th+35-10, 153+.5*w, ni*th+35+h+2, col_grad)
+  .gradient_rectangle(153+.35*w, ni*th+35-10, 153+.5*w, ni*th+35+h+2, col_grad)
 
   tile_edge <- ptcgo::tile_edge; teh <- dim(tile_edge)[1]; tew <- dim(tile_edge)[2]
   tile_edge2 <- ptcgo::tile_edge2; teh2 <- dim(tile_edge2)[1]; tew2 <- dim(tile_edge2)[2]
@@ -74,12 +74,12 @@ decklist <- function(deck_file, filename){
 
 .plot_name_number <- function(vec, ni, th, font_id, h = 85){
   cex <- .string_shortner(vec$name, base = 170)*1.75
-  shadowtext(155, ni*th+30+h/2, vec$name, pos = 4, cex = cex, r = 0.5,
+  .shadowtext(155, ni*th+30+h/2, vec$name, pos = 4, cex = cex, r = 0.5,
              family = font_id)
 
   if(vec$num != 1){
     cex <- .string_shortner(vec$num, base = 16.29, min_ratio = 0.55)*3
-    shadowtext(885, ni*th+25+h/2, vec$num, col = "gold",
+    .shadowtext(885, ni*th+25+h/2, vec$num, col = "gold",
                pos = 2, cex = cex, r = 0.5, family = font_id)
   }
 

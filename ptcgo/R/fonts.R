@@ -1,4 +1,4 @@
-font_setup <- function(font_name = "Bevan", id_name = "bevan"){
+.font_setup <- function(font_name = "Bevan", id_name = "bevan"){
   current_vec <- sysfonts::font.families()
   if(id_name %in% current_vec){
     message("Font id_name already in sysfonts::font.families()")

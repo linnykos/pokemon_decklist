@@ -1,4 +1,4 @@
-file_reader <- function(deck_file){
+.file_reader <- function(deck_file){
   con <- file(deck_file, "r")
   txt <- vector("list", 1)
   i <- 1
@@ -14,7 +14,7 @@ file_reader <- function(deck_file){
   txt
 }
 
-line_parser <- function(line){
+.line_parser <- function(line){
   str <- unlist(strsplit(line, " "))
   len <- length(str)
   num <- str[2]
