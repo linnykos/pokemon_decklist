@@ -52,3 +52,13 @@ do
   convert $card -background white -virtual-pixel background +distort ScaleRotateTranslate +90 +repage "../../images/cards/$card"
   convert "../../images/cards/$card" -crop 633x387+533+1070 "../../images/cards/$card"
 done
+
+###############
+cd $home
+cd "raw_set_symbol"
+files=`ls`
+
+for set in $files
+do
+  convert $set -resize 77x77 "../../images/sets/$set"
+done
