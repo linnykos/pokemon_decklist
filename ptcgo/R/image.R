@@ -1,6 +1,6 @@
-image_row_extraction <- function(file, extraction_method = .extract_base){
+.image_row_extraction <- function(file, x = NA, y = NA){
   mat <- png::readPNG(file)
-  extraction_method(mat)
+  .extract_base(mat, x, y) ## MODIFY
 }
 
 .extract_base <- function(mat, hc = 85){
@@ -9,8 +9,11 @@ image_row_extraction <- function(file, extraction_method = .extract_base){
   mat[top:bot,1:w,]
 }
 
-.plot_image <- function(mat, ...){
+.plot_tester <- function(mat, ...){
   h <- dim(mat)[1]; w <- dim(mat)[2]
   graphics::plot(NA, xlim = c(0, w), ylim = c(0, h), asp = T, ...)
   graphics::rasterImage(mat, 0, 0, w, h)
 }
+
+
+

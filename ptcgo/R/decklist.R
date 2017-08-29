@@ -3,7 +3,6 @@ decklist <- function(deck_file, filename){
   txt <- txt[grep("^\\* ", txt)]
 
   txt_mat <- t(sapply(txt, line_parser)); n <- nrow(txt_mat)
-  txt_mat[,1] <- as.numeric(txt_mat[,1])
 
   tile <- ptcgo::tile; th <- dim(tile)[1]; tw <- dim(tile)[2]
   nh <- th*nrow(txt_mat)
@@ -18,12 +17,7 @@ decklist <- function(deck_file, filename){
   graphics::plot(NA, xlim = c(0, tw), ylim = c(0, nh), asp = T,
                  xaxt = "n", yaxt = "n", ann = F, bty = "n")
 
-  col_vec <- c(17, 114, 49)
-  pkmn_col <- grDevices::rgb(col_vec[1], col_vec[2], col_vec[3], max = 255)
-  pkmn_colgradient <- grDevices::colorRampPalette(c(pkmn_col,
-                                                 grDevices::rgb(col_vec[1], col_vec[2],
-                                                     col_vec[3], 0, max = 255)),
-                                               alpha = T)(100)
+  res <- .color_setup(17, 114, 49); col <- res$col; col_grad <- res$col_grad
 
   #set up fonts
   font_id <- font_setup()
@@ -36,7 +30,7 @@ decklist <- function(deck_file, filename){
 
     #add pkmn image; check the number of copies
     func <- .file_parser()
-    img <- image_row_extraction(func(txt_mat[i,3]))
+    img <- .image_row_extraction(func(txt_mat[i,3]))
     img_cropped <- .extract_base(img)
     if(txt_mat[i,1] != 1){
       graphics::rasterImage(img_cropped, 170, (n-i)*th+35-6, 170+w, (n-i)*th+35+h)
@@ -45,9 +39,9 @@ decklist <- function(deck_file, filename){
     }
 
     #add gradient
-    graphics::rect(153, (n-i)*th+35-10, 153+.35*w, (n-i)*th+35+h+2, col = pkmn_col,
+    graphics::rect(153, (n-i)*th+35-10, 153+.35*w, (n-i)*th+35+h+2, col = col,
                    border = NA)
-    gradient_rectangle(153+.35*w, (n-i)*th+35-10, 153+.5*w, (n-i)*th+35+h+2, pkmn_colgradient)
+    gradient_rectangle(153+.35*w, (n-i)*th+35-10, 153+.5*w, (n-i)*th+35+h+2, col_grad)
 
     #add edge
     if(txt_mat[i,1] != 1){
@@ -71,6 +65,29 @@ decklist <- function(deck_file, filename){
   showtext::showtext.end()
 
   grDevices::graphics.off()
+}
+
+
+.plot_pokemon <- function(){
+
+}
+
+.plot_details <- function(){
+
+}
+
+.plot_name_number <- function(){
+
+}
+
+
+
+.color_setup <- function(r, g, b, len = 100){
+  col <- grDevices::rgb(r, g, b, max = 255)
+  col_grad <- grDevices::colorRampPalette(c(pkmn_col,
+                                            grDevices::rgb(r, g, b, 0, max = 255)),
+                                          alpha = T)(len)
+  list(col = col, col_grad = col_grad)
 }
 
 .calculate_image_size <- function(txt_mat){
