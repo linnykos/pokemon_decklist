@@ -19,7 +19,8 @@ line_parser <- function(line){
   len <- length(str)
   num <- str[2]
 
-  if(nchar(str[len-1]) == 3){
+  if((nchar(str[len-1]) == 3 | nchar(str[len-1] == 2)) &
+     grepl("[[:alpha:]]", str[len-1]) & toupper(str[len-1]) == str[len-1]){
     set <- str[len-1]
     name <- paste0(str[3:(len-2)], collapse = " ")
     id <- paste0(str[3:len], collapse = "")
@@ -29,8 +30,9 @@ line_parser <- function(line){
     id <- paste0(str[3:(len-1)], collapse = "")
   }
 
+  id <- gsub("[[:punct:]]","",id)
 
-  list(num = num, name = name, id = id, set = set)
+  list(num = as.numeric(num), name = name, id = id, set = set)
 }
 
 #determines the appropriate cex for string
