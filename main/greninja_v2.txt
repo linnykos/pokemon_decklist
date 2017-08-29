@@ -4,16 +4,16 @@
 
 * 4 Talonflame STS 96
 * 1 Talonflame BREAK STS 21
-* 1 Alolan Vulpix GRI 21
 * 3 Greninja BREAK BKP 41
-* 4 Froakie BKP 38
-* 3 Frogadier BKP 39
+* 3 Froakie BKP 38
+* 4 Frogadier BKP 39
 * 4 Greninja BKP 40
 
 ##Trainer Cards - 30
 
 * 2 Brooklet Hill GRI 120
 * 1 Rescue Stretcher GRI 130
+* 1 Super Rod BKT 149
 * 2 Rare Candy SUM 129
 * 4 Evosoda GEN 62
 * 4 Professor Sycamore BKP 107
