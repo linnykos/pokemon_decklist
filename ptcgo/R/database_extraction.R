@@ -5,7 +5,7 @@
 
   addition_mat <- sapply(1:nrow(txt_mat), function(x){
     id <- txt_mat[x, "id"]
-    DBI::dbGetQuery(db, paste0("SELECT Type, X_center, Y_center FROM card",
+    DBI::dbGetQuery(db, paste0("SELECT Type, X_right, Y_center FROM card",
                                " WHERE Card_ID == '", id, "'"))
   })
 

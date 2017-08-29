@@ -1,12 +1,17 @@
 .image_row_extraction <- function(file, x = NA, y = NA){
   mat <- png::readPNG(file)
-  .extract_base(mat, x, y) ## MODIFY
+  .extract_base(mat, x, y)
 }
 
-.extract_base <- function(mat, hc = 85){
-  h <- dim(mat)[1]; w <- dim(mat)[2]
-  cen <- h/2; top <- cen-hc/2; bot <- cen+hc/2
-  mat[top:bot,1:w,]
+.extract_base <- function(mat, x = NA, y = NA, hc = 85){
+  if(is.na(x) | is.na(y)){
+    h <- dim(mat)[1]; w <- dim(mat)[2]
+    cen <- h/2; top <- cen-hc/2; bot <- cen+hc/2
+    mat[top:bot,1:w,]
+  } else {
+    top <- y-hc/2; bot <- y+hc/2
+    mat[top:bot, 1:x,]
+  }
 }
 
 .plot_tester <- function(mat, ...){
