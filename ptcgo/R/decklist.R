@@ -19,9 +19,9 @@ decklist <- function(deck_file, filename){
                  xaxt = "n", yaxt = "n", ann = F, bty = "n")
 
   col_vec <- c(17, 114, 49)
-  pkmn_col <- rgb(col_vec[1], col_vec[2], col_vec[3], max = 255)
+  pkmn_col <- grDevices::rgb(col_vec[1], col_vec[2], col_vec[3], max = 255)
   pkmn_colgradient <- grDevices::colorRampPalette(c(pkmn_col,
-                                                 rgb(col_vec[1], col_vec[2],
+                                                 grDevices::rgb(col_vec[1], col_vec[2],
                                                      col_vec[3], 0, max = 255)),
                                                alpha = T)(100)
 
@@ -63,7 +63,7 @@ decklist <- function(deck_file, filename){
 
     #add num
     if(txt_mat[i,1] != 1){
-      cex <- .string_shortner(txt_mat[i,1], base = 16.29, min = 0.55)*3
+      cex <- .string_shortner(txt_mat[i,1], base = 16.29, min_ratio = 0.55)*3
       shadowtext(885, (n-i)*th+25+h/2, txt_mat[i,1], col = "gold",
                                 pos = 2, cex = cex, r = 0.5, family = font_id)
     }
@@ -72,7 +72,6 @@ decklist <- function(deck_file, filename){
 
   grDevices::graphics.off()
 }
-
 
 .calculate_image_size <- function(txt_mat){
   func <- .file_parser()
