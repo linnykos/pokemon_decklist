@@ -1,16 +1,19 @@
-.image_row_extraction <- function(file, x = NA, y = NA){
+.image_row_extraction <- function(file, x = NA, y = NA, bool){
   mat <- png::readPNG(file)
-  .extract_base(mat, x, y)
+  .extract_base(mat, x, y, bool)
 }
 
-.extract_base <- function(mat, x = NA, y = NA, hc = 85){
+.extract_base <- function(mat, x = NA, y = NA, bool, hc = 85,
+                          min_len1 = 440, min_len2 = 520){
   h <- dim(mat)[1]; w <- dim(mat)[2]
   if(is.na(x) | is.na(y)){
     cen <- h/2; top <- cen-hc/2; bot <- cen+hc/2
     mat[top:bot,1:w,]
   } else {
     top <- y-hc/2; bot <- y+hc/2
-    mat[top:bot, 1:min(x,w),]
+    if(bool) min_len <- min_len1 else min_len <- min_len2
+    right <- max(min(x,w), min_len)
+    mat[top:bot, 1:right,]
   }
 }
 

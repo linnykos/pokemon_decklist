@@ -42,14 +42,14 @@ decklist <- function(deck_file, filename){
 
 .plot_pokemon <- function(vec, ni, th, offset = 50){
   func <- .file_parser()
-  img <- .image_row_extraction(func(vec$id), vec$X_right+offset, vec$Y_center)
-  img_cropped <- .extract_base(img)
-  h <- dim(img_cropped)[1]; w <- dim(img_cropped)[2]
+  img <- .image_row_extraction(func(vec$id), vec$X_right+offset, vec$Y_center,
+                               ifelse(vec$num != 1, TRUE, FALSE))
+  h <- dim(img)[1]; w <- dim(img)[2]
 
   if(vec$num != 1){
-    graphics::rasterImage(img_cropped, 800-w, ni*th+35-6, 800, ni*th+35+h)
+    graphics::rasterImage(img, 800-w, ni*th+35-6, 800, ni*th+35+h)
   } else {
-    graphics::rasterImage(img_cropped, 885-w, ni*th+35-6, 885, ni*th+35+h)
+    graphics::rasterImage(img, 885-w, ni*th+35-6, 885, ni*th+35+h)
   }
 
   invisible()
