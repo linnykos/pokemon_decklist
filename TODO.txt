@@ -30,3 +30,5 @@ TODO
   or if there are no basic energies
 - Need to teset .ordering_energy w/ a deck with more than one type of energy
 - Generations has a Radiant Collection (RC). How is this represented in the export?
+- Make pokeball (normal) look more white
+- Check to see if deck has 60 cards
