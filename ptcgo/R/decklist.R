@@ -98,7 +98,7 @@ decklist <- function(deck_file, filename){
   if(!is.na(vec$set) & !(vec$Type %in% c("Item", "Supporter", "Stadium", "Energy"))){
     set <- .grab_set(vec$set)
     sh <- dim(set)[1]; sw <- dim(set)[2]
-    graphics::rasterImage(set, 37, ni*th+30, 37+sw, ni*th+30+sh)
+    graphics::rasterImage(set, 38, ni*th+30, 38+sw, ni*th+30+sh)
   }
 
   invisible()
