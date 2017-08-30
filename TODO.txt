@@ -1,5 +1,6 @@
 TODO
 
+- Hide the raw images from github
 - We'll still need a function to "clean" the pokemon 
   name for the pokemon database (i.e., remove GX and EX)
 - Add the pokemon database. It will have pokemon name, evolution family, and previous
