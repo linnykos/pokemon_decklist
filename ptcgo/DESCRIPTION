@@ -1,0 +1,23 @@
+Package: ptcgo
+Type: Package
+Title: Pokemon Decklist
+Version: 0.1.0
+Author: Kevin Lin
+Maintainer: Kevin Lin <klin1234@gmail.com>
+Description: Creates a decklist graphic based on the PTCGO export file.
+     This is based on the Hearthstone decklist.
+Depends:
+    R (>= 3.3.0)
+License: MIT +file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    png,
+    showtext,
+    sysfonts,
+    sqldf,
+    DBI,
+    graphics
+Suggests:
+    testthat
+RoxygenNote: 6.0.1
