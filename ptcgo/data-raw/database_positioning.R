@@ -14,15 +14,19 @@ dat <- read.csv("data-raw/database/card_db.csv")
 idx <- which(is.na(dat$X_right))
 func <- .file_parser()
 
-for(i in idx){
-  id <- dat$Card_ID[i]
+for(i in 1:length(idx)){
+  id <- dat$Card_ID[idx[i]]
   mat <- png::readPNG(func(id))
   .plot_tester(mat)
   h <- dim(mat)[1]; w <- dim(mat)[2]
   x <- rep(1:w, each = h); y <- rep(1:h, times = w)
   ans <- identifyPch(x,y)
 
+  #flip y-axis
+  ans[2] <- h-ans[2]
+
   dat[i,c("X_right", "Y_center")] <- ans
+  print(paste0(i, " of ", length(idx), ": ", ans[1], ", ", ans[2]))
 }
 
 write.csv(dat, file = "data-raw/database/card_db.csv", row.names = F)
