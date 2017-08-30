@@ -11,6 +11,14 @@ idx <- which(apply(dat, 1, function(x){
 }))
 dat <- dat[idx,]
 
+#check the contents
+vec <- dat$Type
+card_types <- ptcgo::card_types
+if(!all(vec %in% card_types)){
+  stop(paste0("Found the following invalid symbols in the csv: ",
+              paste0(unique(vec[!(vec %in% card_types)]))))
+}
+
 DBI::dbWriteTable(conn = db, name = "card", value = dat, row.names = FALSE)
 
 #DBI::dbListTables(db)
