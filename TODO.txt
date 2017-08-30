@@ -1,7 +1,5 @@
 TODO
 
-- Fix card_cropper.sh so it skips the crop if there exists the image in cards/
-- Add different icons (i.e., different pokeballs) for different types
 - We'll still need a function to "clean" the pokemon 
   name for the pokemon database (i.e., remove GX and EX)
 - Add the pokemon database. It will have pokemon name, evolution family, and previous
@@ -30,6 +28,5 @@ TODO
   or if there are no basic energies
 - Need to teset .ordering_energy w/ a deck with more than one type of energy
 - Generations has a Radiant Collection (RC). How is this represented in the export?
-- Make pokeball (normal) look more white
 - Check to see if deck has 60 cards
 - maybe add yellow horizontal bars to separate pokemon, trainer and energy
