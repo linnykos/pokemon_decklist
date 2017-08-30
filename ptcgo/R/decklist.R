@@ -1,7 +1,6 @@
 decklist <- function(deck_file, filename){
   txt <- .file_reader(deck_file)
   txt <- txt[grep("^\\* ", txt)]
-
   txt_mat <- t(sapply(txt, .line_parser)); n <- nrow(txt_mat)
   txt_mat <- .format_information(txt_mat)
   txt_mat <- .ordering(txt_mat)
