@@ -32,7 +32,7 @@
   if(length(idx1) > 0) txt_mat[idx1,] <- .order_number_name(txt_mat[idx1,])
   if(length(idx2) > 0) txt_mat[idx2,] <- .order_number_name(txt_mat[idx2,])
 
-  txt_mat[c(sort(idx2), sort(idx1)),]
+  txt_mat[c(idx2, idx1),]
 }
 
 .idx_basic <- function(str){
@@ -44,6 +44,7 @@
   txt_mat <- txt_mat[order(txt_mat$num, decreasing = T),]
 
   val <- sort(unique(txt_mat$num))
+  j <- 1
   for(i in val){
     idx <- which(txt_mat$num == i)
     if(length(idx) == 1) next()
